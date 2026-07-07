@@ -8,6 +8,7 @@
 <span style="font-size: 150%;font-weight: bold;">Jak znáte pohádky</span><div align="center">
 <form action="/kvizy/vyhodnotit/" method="post">
 <table class="kviz" border="0" frame="void" rules="rows">
+<div id="vysledek" style="font-size:130%; margin-top:20px;"></div>
 <tr><td colspan="3" class="otazka">1) V klobouku bydleli Bob a</td></tr>
 <tr class="odpoved">
 	<td class="space"></td>
@@ -138,7 +139,7 @@
 	<td class="space"></td>
 	<td class="radio"><input type="radio" id="a30" name="10" value="30" /></td>
 	<td class="answer"><label for="a30">c) botách</label></td></tr>
- <tr><td></td><td></td><td><input type="hidden" name="kviz_id" value="1"><input id="tlacitko" type="button" value="Vyhodnotit" onclick="vyhodnotitKviz()"><div id="vysledek" style="font-size:130%; margin-top:20px;"></div></td></tr>
+ <tr><td></td><td></td><td><input type="hidden" name="kviz_id" value="1"><input id="tlacitko" type="button" value="Vyhodnotit" onclick="vyhodnotitKviz()"></td></tr>
 </table></form>
 <span style="font-size: 130%;"></span></div>
 <style>
@@ -239,5 +240,10 @@ function vyhodnotitKviz() {
     tlacitko.onclick = function() {
         location.reload();
     };
+
+window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+});
 }
 </script>
